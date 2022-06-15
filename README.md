@@ -1,7 +1,7 @@
 # MLProject
 Repository untuk AOL Project Machine Learning
 
-Important Note:
+**Important Note:**
 Predictor will not work without the prediction model. Download the model file and place it in the repository folder.
 Do not change the model name from 'prediction-model.joblib'.
 
