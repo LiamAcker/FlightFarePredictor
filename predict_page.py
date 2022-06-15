@@ -26,6 +26,10 @@ def show_predict_page():
         "GoAir",
         "Jet Airways Business",
         "Trujet",
+        "Multiple carriers",
+        "Multiple carriers premium economy",
+        "Jet Airways Business",
+        "Vistara Premium economy",
 
     )
 
@@ -49,5 +53,10 @@ def show_predict_page():
     airline =  st.selectbox("Airline", airlines) 
     source =  st.selectbox("Source", sources) 
     destination =  st.selectbox("Destination", destinations) 
+    total_stops = st.slider("Total Stops", 0, 4, 0)
+    depart_date = st.date_input("Departure Date")
+    depart_time = st.time_input("Departure Time")
+    arrival_date = st.date_input("Arrival Date")
+    arrival_time = st.time_input("Arrival Time")
 
     ok = st.button("Calculate Fare Price")
