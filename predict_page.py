@@ -15,10 +15,6 @@ airlines = (
         "GoAir",
         "Jet Airways Business",
         "Trujet",
-        "Multiple carriers",
-        "Multiple carriers premium economy",
-        "Jet Airways Business",
-        "Vistara Premium economy",
 
     )
 
@@ -36,7 +32,7 @@ cities = (
         data = pickle.load(file)
     return data
 """
-model = joblib.load('prediction-model')
+model = joblib.load('prediction-model.joblib')
 
 def make_predictions(journey_date, journey_time, arrival_date, arrival_time, source, destination, stops, airline):
     pred_input = []
@@ -90,13 +86,13 @@ def make_predictions(journey_date, journey_time, arrival_date, arrival_time, sou
         else:
             pred_input.append(0)
     
-    #prediction = model.predict(np.array([pred_input]))
+    prediction = model.predict(np.array([pred_input]))
 
-    #return int(prediction)
+    return int(prediction)
 
 def show_predict_page():
     st.title("Ticket Price Prediction")
-    st.write(" ### nsert parameters here! ")
+    st.write(" ### Insert parameters here! ")
 
     airline =  st.selectbox("Airline", airlines) 
 
@@ -116,6 +112,10 @@ def show_predict_page():
 
     ok = st.button("Calculate Fare Price")
 
-    Fare = make_predictions(depart_date, depart_time, arrival_date, arrival_time, source, destination, total_stops, airline)
-    Fare_IDR = (Fare-1000) * 188.99
-    st.success('Fare Price will be around Rp. ' + Fare_IDR)
+    if ok:
+        with st.spinner('Calculating...'):
+            Fare = make_predictions(depart_date, depart_time, arrival_date, arrival_time, source, destination, total_stops, airline)
+            Fare_IDR = (Fare-1000) * 188.99
+        st.success('Your Fare will be around Rp. ' + str(Fare_IDR))
+
+  
