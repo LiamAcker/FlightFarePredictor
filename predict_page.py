@@ -1,7 +1,6 @@
 from dataclasses import dataclass
 import pandas as pd
 import streamlit as st
-import pickle
 import numpy as np
 import datetime as dt
 import joblib;
@@ -37,13 +36,7 @@ cities = (
         data = pickle.load(file)
     return data
 """
-
-#data = load_model()
-
-#regressor = data["model"]
-
-#model = joblib.load('prediction-model')
-
+model = joblib.load('prediction-model')
 
 def make_predictions(journey_date, journey_time, arrival_date, arrival_time, source, destination, stops, airline):
     pred_input = []
@@ -103,7 +96,7 @@ def make_predictions(journey_date, journey_time, arrival_date, arrival_time, sou
 
 def show_predict_page():
     st.title("Ticket Price Prediction")
-    st.write(" ### Insert parameters here! ")
+    st.write(" ### nsert parameters here! ")
 
     airline =  st.selectbox("Airline", airlines) 
 
