@@ -26,8 +26,6 @@ def show_predict_page():
         "GoAir",
         "Jet Airways Business",
         "Trujet",
-        "Multiple carriers",
-        "Multiple carries premium economy",
 
     )
 
