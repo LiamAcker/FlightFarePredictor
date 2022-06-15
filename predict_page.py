@@ -3,7 +3,8 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 import datetime as dt
-import joblib;
+#import joblib;
+import pickle;
 
 airlines = (
         "Jet Airways",
@@ -28,7 +29,7 @@ cities = (
     )
 
 #load model
-model = joblib.load('linreg-model.joblib')
+model = pickle.load('linreg-model.joblib')
 
 def make_predictions(journey_date, journey_time, arrival_date, arrival_time, source, destination, stops, airline):
     pred_input = []
