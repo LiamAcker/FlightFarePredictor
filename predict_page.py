@@ -28,7 +28,7 @@ cities = (
     )
 
 #load model
-model = joblib.load('prediction-model.joblib')
+model = joblib.load('linreg-model.joblib')
 
 def make_predictions(journey_date, journey_time, arrival_date, arrival_time, source, destination, stops, airline):
     pred_input = []
