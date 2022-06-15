@@ -27,11 +27,7 @@ cities = (
 
     )
 
-"""def load_model():
-    with open('insert-model-here', 'rb') as file:
-        data = pickle.load(file)
-    return data
-"""
+#load model
 model = joblib.load('prediction-model.joblib')
 
 def make_predictions(journey_date, journey_time, arrival_date, arrival_time, source, destination, stops, airline):
