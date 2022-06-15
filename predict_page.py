@@ -2,8 +2,9 @@ from dataclasses import dataclass
 import pandas as pd
 import streamlit as st
 import numpy as np
-import datetime as dt
+import datetime
 import sklearn
+from datetime import date
 #import joblib;
 import pickle;
 
@@ -99,18 +100,18 @@ def show_predict_page():
     airline =  st.selectbox("Airline", airlines) 
 
     col1, col2 = st.columns([2, 1])
-    source =  col1.selectbox("Departing City", cities) 
-    destination = col2.selectbox("Arrival City", cities)
+    source =  col1.selectbox("Departing City", cities, index=0) 
+    destination = col2.selectbox("Arrival City", cities, index=1)
 
     total_stops = st.slider("Total Stops", 0, 4, 0)
 
     col3, col4 = st.columns([4, 3])
-    depart_date = col3.date_input("Departure Date")
-    depart_time = col4.time_input("Departure Time")
+    depart_date = col3.date_input("Departure Date", datetime.date(2022, 7, 6))
+    depart_time = col4.time_input("Departure Time", datetime.time(8, 45))
 
     col5, col6 = st.columns([6, 5])
-    arrival_date = col5.date_input("Arrival Date")
-    arrival_time = col6.time_input("Arrival Time")
+    arrival_date = col5.date_input("Arrival Date", datetime.date(2022, 7, 7))
+    arrival_time = col6.time_input("Arrival Time", datetime.time(10, 15))
 
     ok = st.button("Calculate Fare Price")
 
