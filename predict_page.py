@@ -119,6 +119,8 @@ def show_predict_page():
         with st.spinner('Calculating...'):
             Fare = make_predictions(depart_date, depart_time, arrival_date, arrival_time, source, destination, total_stops, airline)
             Fare_IDR = (Fare-1000) * 188.99
-        st.success('Your Fare will be around Rp. ' + str(Fare_IDR))
+            Fare_IDR = "{:.2f}".format(Fare_IDR)
+
+        st.success('Your Fare will be around IDR ' + str(Fare_IDR))
 
   
