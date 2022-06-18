@@ -122,7 +122,7 @@ def show_predict_page():
             Fare_IDR = (Fare-1000) * 188.99
             Fare_IDR = "{:.2f}".format(Fare_IDR)
 
-        st.success('Your Fare will be around IDR ' + str(Fare_IDR) + 'with an accuracy rating of 68.9%)
+        st.success('Your Fare will be around IDR ' + str(Fare_IDR) + 'with an accuracy rating of 68.9%')
 
     st.write(" ##### App made by: ")
     st.write(" ###### Linggar Tembus Nusantara - 2440107771 ")
