@@ -1,5 +1,4 @@
-# MLProject
-Repository untuk AOL Project Machine Learning
+# MLProject Flight Fare Prediction
 
-App is accessible from:
+Web App is accessible from:
 https://share.streamlit.io/liamacker/mlproject/main/app.py
