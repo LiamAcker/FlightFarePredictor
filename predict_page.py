@@ -95,7 +95,8 @@ def make_predictions(journey_date, journey_time, arrival_date, arrival_time, sou
 
 def show_predict_page():
     st.title("Ticket Price Prediction")
-    st.write(" ### Insert parameters here! ")
+    st.write(" ###### Input your trip details: ")
+
 
     airline =  st.selectbox("Airline", airlines) 
 
@@ -122,5 +123,10 @@ def show_predict_page():
             Fare_IDR = "{:.2f}".format(Fare_IDR)
 
         st.success('Your Fare will be around IDR ' + str(Fare_IDR))
+
+    st.write(" ##### App made by: ")
+    st.write(" ###### Linggar Tembus Nusantara - 2440107771 ")
+    st.write(" ###### Fadly Haikal Fasya - 2440070642 ")
+    st.write(" ###### Michael Gunawan - 2440037771 ")
 
   
